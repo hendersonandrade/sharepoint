@@ -20,8 +20,10 @@ $x=1
 
 foreach($solution in $farm.Solutions){
 $solution_name = $solution.name.ToUpper()
-for ($i = 1; $i -le 100; $i++ )
-{write-progress -activity "Downloading Solution $x of $variable_count - $solution_name... $i%" -percentcomplete $i;}
+
+for ($i = 1; $i -le 100; $i++ ){
+    write-progress -activity "Downloading Solution $x of $variable_count - $solution_name... $i%" -percentcomplete $i;
+}
 
 # Write-Host -ForegroundColor white "Saving solution: " $solution.Name " in folder $loc"
 $solution = $farm.Solutions[$solution.Name]
